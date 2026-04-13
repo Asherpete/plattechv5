@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>BantayManila – Report an Issue</title>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Gudea:ital,wght@0,400;0,700;1,400&family=Actor&family=Rosario:wght@300;400;600&display=swap"
+            rel="stylesheet" />
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+            rel="stylesheet" />
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+            rel="stylesheet" />
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body class="report-page">
+
+        <!-- NAVBAR -->
+        <nav id="navbar">
+            <a href="./index.html" class="nav-logo">
+                <img
+                    src="https://www.figma.com/api/mcp/asset/b3d4e594-af71-45a4-8e39-9efc0e211133"
+                    alt="BantayManila Logo" />
+            </a>
+            <ul class="nav-links">
+                <li><a href="#hero">HOME</a></li>
+                <li><a href="#about">ABOUT</a></li>
+                <li><a href="./report.html">REPORT AN ISSUE</a></li>
+                <li><a href="#features">FEATURES</a></li>
+                <li><a href="#mission">MISSION</a></li>
+            </ul>
+            <div class="nav-buttons">
+                <!-- filled by nav-auth.js -->
+                <button class="btn-login" id="navLoginBtn">LOGIN</button>
+                <button class="btn-signup" id="navSignupBtn">SIGN UP</button>
+            </div>
+        </nav>
+
+        <!-- REPORT PAGE HEADER -->
+        <div class="report-hero">
+            <div class="report-hero-overlay"></div>
+            <div class="report-hero-content">
+                <h1>Community Reports</h1>
+                <p>See what your neighbors are reporting. Sign in to submit your
+                    own issue.</p>
+                <button class="btn-make-post" id="makePostBtn">+ Make a
+                    Report</button>
+            </div>
+        </div>
+
+        <!-- FEED -->
+        <main class="report-main">
+            <div class="report-feed-wrap">
+                <div class="feed-top-bar">
+                    <h2 class="feed-heading">Recent Reports</h2>
+                </div>
+                <div id="postFeed" class="post-feed"></div>
+            </div>
+        </main>
+
+        <!-- POST MODAL OVERLAY -->
+        <div class="modal-overlay" id="postModalOverlay"></div>
+
+        <!-- POST MODAL -->
+        <div class="post-modal" id="postModal">
+            <div class="modal-header">
+                <h2 id="postModalTitle">Create Report</h2>
+                <button class="modal-close"
+                    id="closePostModal">&#x2715;</button>
+            </div>
+            <form id="postForm">
+                <div class="field-group">
+                    <label>Title <span class="req">*</span></label>
+                    <input type="text" id="postTitle"
+                        placeholder="e.g. Broken streetlight on Rizal Ave"
+                        required />
+                </div>
+                <div class="field-group">
+                    <label>Description <span class="req">*</span></label>
+                    <textarea id="postDescription" rows="4"
+                        placeholder="Describe the issue in detail..."></textarea>
+                </div>
+                <div class="field-group">
+                    <label>Location</label>
+                    <input type="text" id="postLocation"
+                        placeholder="e.g. Barangay 123, Tondo, Manila" />
+                </div>
+                <div class="field-group">
+                    <label>Photo</label>
+                    <div class="drop-zone" id="dropZone">
+                        <svg width="32" height="32" viewBox="0 0 24 24"
+                            fill="none" stroke="currentColor"
+                            stroke-width="1.5"><rect x="3" y="3" width="18"
+                                height="18" rx="3" /><circle cx="8.5" cy="8.5"
+                                r="1.5" /><polyline
+                                points="21 15 16 10 5 21" /></svg>
+                        <p>Click to upload or drag &amp; drop a photo</p>
+                    </div>
+                    <input type="file" id="imageInput" accept="image/*"
+                        hidden />
+                    <div id="imagePreview"></div>
+                </div>
+                <button type="submit" class="submit-post-btn"
+                    id="submitPostBtn">Submit Report</button>
+            </form>
+        </div>
+
+        <script src="script.js"></script>
+        <script type="module" src="./report-init.js"></script>
+    </body>
+</html>

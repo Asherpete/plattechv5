@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>BantayManila – Building a Safer, Cleaner Manila</title>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Gudea:ital,wght@0,400;0,700;1,400&family=Actor&family=Rosario:wght@300;400;600&display=swap"
+            rel="stylesheet" />
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+            rel="stylesheet" />
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+            rel="stylesheet" />
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <div id="loader">
+            <div class="loader-logo">Bantay<span>Manila</span></div>
+            <div class="loader-bar"><div class="loader-bar-fill"><p
+                        style="color:rgba(255,255,255,0.4);font-size:0.8rem;letter-spacing:2px;margin-top:6px;">LOADING...</p></div></div>
+        </div>
+
+        <nav id="navbar">
+            <a href="./index.html" class="nav-logo">
+                <img
+                    src="https://www.figma.com/api/mcp/asset/b3d4e594-af71-45a4-8e39-9efc0e211133"
+                    alt="BantayManila Logo" />
+            </a>
+            <ul class="nav-links">
+                <li><a href="#hero">HOME</a></li>
+                <li><a href="#about">ABOUT</a></li>
+                <li class="nav-dropdown"></li>
+                <li><a href="./report.html">REPORT AN ISSUE</a></li>
+                <li><a href="#features">FEATURES</a></li>
+                <li><a href="#mission">MISSION</a></li>
+            </ul>
+            <div class="nav-buttons">
+                <button class="btn-login" id="navLoginBtn">LOGIN</button>
+                <button class="btn-signup" id="navSignupBtn">SIGN UP</button>
+            </div>
+        </nav>
+
+        <section id="hero">
+            <div class="hero-bg" id="heroBg"></div>
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">Building a Safer,<br>Cleaner
+                        Manila</h1>
+                    <p class="hero-sub">Quickly report problems in your area,
+                        track their progress, and receive updates as local
+                        authorities take action to resolve them.</p>
+                    <a href="./report.html" class="hero-btn">Report an Issue</a>
+                </div>
+                <div class="hero-images">
+                    <div class="hero-img"><img
+                            src="https://www.figma.com/api/mcp/asset/492130ac-0c53-4c6e-869f-e0e94e86fdde"
+                            alt="Community issue" /></div>
+                    <div class="hero-img"><img
+                            src="https://www.figma.com/api/mcp/asset/a7354330-4534-4b08-8b35-f27f6aad515f"
+                            alt="Road repair" /></div>
+                    <div class="hero-img"><img
+                            src="https://www.figma.com/api/mcp/asset/cd330cca-058b-4466-b326-b4c7e93b36ba"
+                            alt="Community work" /></div>
+                </div>
+            </div>
+            <div class="scroll-hint">SCROLL</div>
+        </section>
+
+        <section id="about">
+            <div class="about-inner">
+                <h2 class="section-title reveal">Why BantayManila?</h2>
+                <p class="section-sub reveal delay-1">BantayManila is a platform
+                    that helps residents report and track community issues. It
+                    connects citizens with local authorities to ensure concerns
+                    are seen and resolved.</p>
+                <div class="cards-grid">
+                    <div class="card reveal-scale delay-1"><span
+                            class="card-icon">📋</span><div
+                            class="card-title">Easy Reporting</div><p
+                            class="card-text">Quickly submit issues with clear
+                            details, photos, and exact location to help
+                            authorities understand the problem better.</p></div>
+                    <div class="card reveal-scale delay-2"><span
+                            class="card-icon">🔔</span><div
+                            class="card-title">Real-Time Updates</div><p
+                            class="card-text">Stay informed by tracking the
+                            progress of your reports and receiving updates as
+                            actions are taken.</p></div>
+                    <div class="card reveal-scale delay-3"><span
+                            class="card-icon">🤝</span><div
+                            class="card-title">Community Driven</div><p
+                            class="card-text">Work together with other residents
+                            to highlight, support, and prioritize important
+                            community issues.</p></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="mission">
+            <div class="mission-bg"></div>
+            <div class="mission-overlay"></div>
+            <div class="mission-inner">
+                <h2 class="mission-title reveal-left">Our<br>Mission</h2>
+                <p class="mission-text reveal-right">To empower residents to
+                    easily report community issues and ensure they are tracked
+                    and resolved. We aim to promote transparency, faster
+                    response, and a cleaner, safer Manila through
+                    technology.</p>
+            </div>
+        </section>
+
+        <section id="features">
+            <div class="features-inner">
+                <div class="features-col">
+                    <h2 class="section-title reveal-left">Key Features</h2>
+                    <ul class="features-list">
+                        <li class="reveal delay-1">Easy Reporting – Submit
+                            issues with description, photo, and location.</li>
+                        <li class="reveal delay-2">Track Progress – See updates
+                            from pending to resolved.</li>
+                        <li class="reveal delay-3">Interactive Map – View all
+                            reported issues across Manila.</li>
+                        <li class="reveal delay-4">Notifications – Get alerts
+                            when your report is updated.</li>
+                        <li class="reveal delay-5">Community Support – Others
+                            can confirm or upvote issues.</li>
+                    </ul>
+                </div>
+                <div class="how-col">
+                    <h2 class="section-title reveal-right">How It Works</h2>
+                    <ol class="steps-list">
+                        <li class="step-item reveal delay-1"><div
+                                class="step-num">1</div><div
+                                class="step-text"><strong>Report an
+                                    Issue</strong>Submit a problem with a
+                                description, photo, and location.</div></li>
+                        <li class="step-item reveal delay-2"><div
+                                class="step-num">2</div><div
+                                class="step-text"><strong>Review by
+                                    Authorities</strong>City officials check
+                                your report and assign it to the right
+                                department.</div></li>
+                        <li class="step-item reveal delay-3"><div
+                                class="step-num">3</div><div
+                                class="step-text"><strong>Track
+                                    Progress</strong>Follow the status of your
+                                report in real time.</div></li>
+                        <li class="step-item reveal delay-4"><div
+                                class="step-num">4</div><div
+                                class="step-text"><strong>Resolution</strong>Receive
+                                updates when the issue is fixed and confirmed
+                                resolved.</div></li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <section id="cta">
+            <div class="cta-bg"></div>
+            <div class="cta-overlay"></div>
+            <div class="cta-inner">
+                <h2 class="cta-title reveal">Call to Action</h2>
+                <p class="cta-text reveal delay-1">Help improve your community
+                    today. Report issues you see and make sure they get the
+                    attention they deserve. Join BantayManila now to track
+                    reports, receive updates, and be part of the solution.</p>
+                <div class="cta-buttons">
+                    <button class="cta-btn-primary reveal-left delay-2"
+                        onclick="window.location.href='./SignIn.html?mode=signup'">SIGN
+                        UP</button>
+                    <button class="cta-btn-secondary reveal-right delay-2"
+                        onclick="window.location.href='./report.html'">REPORT AN
+                        ISSUE</button>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <div class="footer-grid">
+                <div class="footer-logo"><img
+                        src="https://www.figma.com/api/mcp/asset/b3d4e594-af71-45a4-8e39-9efc0e211133"
+                        alt="BantayManila" /></div>
+                <div class="footer-col"><h4>Contact Us</h4><p>Email:
+                        support@bantaymanila.com</p><p>Phone: +63 912 345
+                        6789</p></div>
+                <div class="footer-col"><h4>Quick Links</h4><a
+                        href="#hero">Home</a><a href="./report.html">Report
+                        Issue</a><a href="#">Map</a><a
+                        href="./SignIn.html">Login</a></div>
+                <div class="footer-col"><h4>Follow Us</h4><a
+                        href="#">Facebook</a><a href="#">Twitter</a><a
+                        href="#">Instagram</a></div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copy">© 2026 BantayManila. All rights
+                    reserved.</p>
+                <p
+                    class="footer-quote">"Empowering communities through transparency and action."</p>
+            </div>
+        </footer>
+
+        <script src="script.js"></script>
+        <script type="module" src="./nav-auth.js"></script>
+    </body>
+</html>
