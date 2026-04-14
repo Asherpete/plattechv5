@@ -1,2 +1,2 @@
-import { initNavAuth } from "./Auth.js";
+import { initNavAuth } from "./auth.js";
 initNavAuth();

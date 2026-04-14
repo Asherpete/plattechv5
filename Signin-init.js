@@ -1,3 +1,3 @@
-import { initNavAuth, initAuthForms } from "./Auth.js";
+import { initNavAuth, initAuthForms } from "./auth.js";
 initNavAuth();
 initAuthForms();
