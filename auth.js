@@ -56,10 +56,10 @@ export function initNavAuth() {
         <button class="btn-signup" id="navSignupBtn">SIGN UP</button>
       `;
       document.getElementById("navLoginBtn")?.addEventListener("click", () => {
-        window.location.href = "./SignIn.html";
+        window.location.href = "./signin.html";
       });
       document.getElementById("navSignupBtn")?.addEventListener("click", () => {
-        window.location.href = "./SignIn.html?mode=signup";
+        window.location.href = "./signin.html?mode=signup";
       });
     }
   });

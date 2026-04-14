@@ -45,7 +45,7 @@ onAuthStateChanged(auth, (user) => {
 // ── Open modal ──
 function openModal(prefill) {
   if (!currentUser) {
-    window.location.href = "./SignIn.html";
+    window.location.href = "./signin.html";
     return;
   }
   if (!prefill) {
