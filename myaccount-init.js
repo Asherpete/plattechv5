@@ -5,14 +5,14 @@ import {
   onAuthStateChanged,
   collection,
   getDocs,
-} from "./Auth.js";
+} from "./auth.js";
 
 initNavAuth();
 
 const accountContent = document.getElementById("accountContent");
-const notLoggedIn    = document.getElementById("notLoggedIn");
-const accountFeed    = document.getElementById("accountFeed");
-const accountStats   = document.getElementById("accountStats");
+const notLoggedIn = document.getElementById("notLoggedIn");
+const accountFeed = document.getElementById("accountFeed");
+const accountStats = document.getElementById("accountStats");
 
 let myPosts = [];
 let currentFilter = "all";
@@ -27,10 +27,16 @@ onAuthStateChanged(auth, async (user) => {
   // Fill profile header
   accountContent.style.display = "block";
   const initials = user.displayName
-    ? user.displayName.split(" ").map((n) => n[0]).join("").toUpperCase().slice(0, 2)
+    ? user.displayName
+        .split(" ")
+        .map((n) => n[0])
+        .join("")
+        .toUpperCase()
+        .slice(0, 2)
     : user.email[0].toUpperCase();
   document.getElementById("accountAvatar").textContent = initials;
-  document.getElementById("accountName").textContent = user.displayName || "My Account";
+  document.getElementById("accountName").textContent =
+    user.displayName || "My Account";
   document.getElementById("accountEmail").textContent = user.email;
 
   await loadMyPosts(user.uid);
@@ -87,14 +93,16 @@ function renderStats() {
 
 // ── Render feed with current filter ────────────────────────────
 function renderFeed() {
-  const filtered = currentFilter === "all"
-    ? myPosts
-    : myPosts.filter((p) => (p.status || "pending") === currentFilter);
+  const filtered =
+    currentFilter === "all"
+      ? myPosts
+      : myPosts.filter((p) => (p.status || "pending") === currentFilter);
 
   if (filtered.length === 0) {
-    accountFeed.innerHTML = myPosts.length === 0
-      ? `<div class="empty-feed">You haven't submitted any reports yet.</div>`
-      : `<div class="empty-feed">No reports with this status.</div>`;
+    accountFeed.innerHTML =
+      myPosts.length === 0
+        ? `<div class="empty-feed">You haven't submitted any reports yet.</div>`
+        : `<div class="empty-feed">No reports with this status.</div>`;
     return;
   }
 
@@ -109,7 +117,12 @@ function renderPostCard(post) {
   card.className = "post-card";
 
   const initials = post.authorName
-    ? post.authorName.split(" ").map((n) => n[0]).join("").toUpperCase().slice(0, 2)
+    ? post.authorName
+        .split(" ")
+        .map((n) => n[0])
+        .join("")
+        .toUpperCase()
+        .slice(0, 2)
     : "?";
 
   const timeStr = formatTime(post.createdAt);
@@ -129,7 +142,11 @@ function renderPostCard(post) {
       <h3 class="post-title">${post.title}</h3>
       <p class="post-desc">${post.description}</p>
       ${post.location ? `<p class="post-location">📍 ${post.location}</p>` : ""}
-      ${post.imageUrl ? `<div class="post-image-wrap"><img src="${post.imageUrl}" alt="Post image" /></div>` : ""}
+      ${
+        post.imageUrl
+          ? `<div class="post-image-wrap"><img src="${post.imageUrl}" alt="Post image" /></div>`
+          : ""
+      }
     </div>
   `;
   return card;
@@ -138,7 +155,9 @@ function renderPostCard(post) {
 // ── Filter tabs ─────────────────────────────────────────────────
 document.querySelectorAll(".admin-tab").forEach((btn) => {
   btn.addEventListener("click", () => {
-    document.querySelectorAll(".admin-tab").forEach((b) => b.classList.remove("active"));
+    document
+      .querySelectorAll(".admin-tab")
+      .forEach((b) => b.classList.remove("active"));
     btn.classList.add("active");
     currentFilter = btn.dataset.filter;
     renderFeed();
@@ -147,7 +166,13 @@ document.querySelectorAll(".admin-tab").forEach((btn) => {
 
 // ── Helpers ─────────────────────────────────────────────────────
 function statusLabel(status) {
-  return { pending: "🕐 Pending", "in-progress": "🔧 In Progress", finished: "✅ Finished" }[status] || "🕐 Pending";
+  return (
+    {
+      pending: "🕐 Pending",
+      "in-progress": "🔧 In Progress",
+      finished: "✅ Finished",
+    }[status] || "🕐 Pending"
+  );
 }
 
 function formatTime(timestamp) {

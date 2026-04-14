@@ -10,7 +10,7 @@ import {
   updateDoc,
   deleteDoc,
   serverTimestamp,
-} from "./Auth.js";
+} from "./auth.js";
 
 import { getDocs } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 

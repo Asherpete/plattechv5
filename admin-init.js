@@ -8,7 +8,7 @@ import {
   doc,
   updateDoc,
   serverTimestamp,
-} from "./Auth.js";
+} from "./auth.js";
 
 // ─── ADMIN EMAILS ───────────────────────────────────────────────
 // Add admin email addresses here
