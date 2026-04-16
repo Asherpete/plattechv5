@@ -5,7 +5,7 @@
 
 # Node (if you add Vite or any npm tools later)
 node_modules/
-dist/
+dist/   
 .vite/
 
 # OS files

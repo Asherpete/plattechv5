@@ -32,6 +32,9 @@ const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
 export const db = getFirestore(app);
 
+// ── Admin emails (must match admin-init.js) ──
+const ADMIN_EMAILS = ["admin@bantaymanila.com", "adminbantaymanila@gmail.com"];
+
 // ── Update navbar based on auth state (shared across all pages) ──
 export function initNavAuth() {
   onAuthStateChanged(auth, (user) => {
@@ -39,10 +42,22 @@ export function initNavAuth() {
     if (!navButtons) return;
 
     if (user) {
+      const isAdmin = ADMIN_EMAILS.includes(user.email);
+
+      // If admin, redirect HOME nav link to admin dashboard
+      if (isAdmin) {
+        const homeLinks = document.querySelectorAll(".nav-links a");
+        homeLinks.forEach((link) => {
+          if (link.textContent.trim() === "HOME") {
+            link.href = "./admin.html";
+          }
+        });
+      }
+
       navButtons.innerHTML = `
-        <a class="nav-account-link" href="./myaccount.html">👤 ${
-          user.displayName || user.email
-        }</a>
+        <a class="nav-account-link" href="${
+          isAdmin ? "./admin.html" : "./myaccount.html"
+        }">👤 ${user.displayName || user.email}</a>
         <button class="btn-logout" id="logoutBtn">LOG OUT</button>
       `;
       document.getElementById("logoutBtn").addEventListener("click", () => {
